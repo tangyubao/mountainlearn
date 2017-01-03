@@ -1,14 +1,21 @@
-## 详细目录
+## 目录
 
 - 开发工具
  - markdown
  - Atom
  - git
  - github
-- 页面制作
- - PS基础
- - HTML
-   - 语义标签
-   - 功能标签
-   - 属性
-   - 实体字符
+- web前端
+ - 页面制作
+ - 页面布局
+ - Javascript编程
+ - Jquery.js
+ - React.js
+ - Bootstrap
+ - Angular.js
+ - vue.js
+ - SASS
+ - Less
+- PHP
+- Node.js
+- Python
