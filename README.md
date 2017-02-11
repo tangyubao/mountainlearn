@@ -4,10 +4,11 @@
 
 ### 以下是总目录：
 * [开发工具](chapter1/00.md)
- * [markdown](chapter1/01_markdown.md)  
- * atom  
- * git  
- * github
+ * [Markdown](chapter1/01_markdown.md)  
+ * [Atom](chapter1/02_atom.md)  
+ * [Emmet](chapter1/03_emmet.md)
+ * [Git](chapter1/04_git.md)  
+ * [Github](chapter1/05_github.md)
 * 前端开发
   * 页面制作
   * 页面布局
