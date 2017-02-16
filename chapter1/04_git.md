@@ -78,3 +78,4 @@ Git是个分布式版本控制工具，它可以在不同的电脑上对同一�
 |清空暂存区|git reset HEAD|  
 |清空工作区|git checkout -- <span style="color:green;">*</span>|  
 |清空暂存区和工作区|git reset --hard HEAD|  
+内容1
