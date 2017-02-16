@@ -65,7 +65,7 @@ Git记录的是文件的变化，暂存区只会记录一次变化，而分支�
 
 Git是个分布式版本控制工具，它可以在不同的电脑上对同一个项目进行版本控制。我们可以将一个版本库提交到一个服务器上，这样就建立了远程仓库，在别的电脑上可以从这个服务器上clone这个远程仓库，不同电脑上的版本库内容都可以提交到这个远程仓库，也可以从这个远程仓库下载内容，这样就可以由多人在不同地方对一个项目同步进行管理。  
 
-#### 管理修改  
+#### 管理修改与版本控制   
 
 |需求|命令|  
 |:----|:-----|
@@ -73,4 +73,8 @@ Git是个分布式版本控制工具，它可以在不同的电脑上对同一�
 |暂存区到分支|git commit -m <span style="color:green;">"说明"</span>|  
 |分支到远程仓库|git push origin <span style="color:green;">master</span>|   
 |远程仓库到分支|git pull|  
-|版本回退||
+|回退到上一版本|git reset HEAD^|
+|回退到3个版本之前|git reset HEAD~<span style="color:green;">3</span>|
+|清空暂存区|git reset HEAD|  
+|清空工作区|git checkout -- <span style="color:green;">*</span>|  
+|清空暂存区和工作区|git reset --hard HEAD|  
