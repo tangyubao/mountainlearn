@@ -77,5 +77,27 @@ Git是个分布式版本控制工具，它可以在不同的电脑上对同一�
 |回退到3个版本之前|git reset HEAD~<span style="color:green;">3</span>|
 |清空暂存区|git reset HEAD|  
 |清空工作区|git checkout -- <span style="color:green;">*</span>|  
-|清空暂存区和工作区|git reset --hard HEAD|  
-内容1
+|清空暂存区和工作区|git reset --hard HEAD|   
+
+***
+
+## 远程仓库交互  
+
+####  连接远程仓库  
+
+这里假定远程仓库在Github上，首先在Github上注册一个账号，这个就不做介绍了。注册好账户后通过以下几个步骤将电脑上的git账号与github上的账户建立连系：  
+
+1. 打开Shell（Windows下打开Git Bash），创建SSH Key：  
+````
+$ ssh-keygen -t rsa -C "youremail@example.com"
+````  
+
+2. 然后在电脑用户主目录下找到`.ssh`目录（需要先设置能查看隐藏文件夹），找到`id_rsa.pub`文件，复制里面的内容。  
+
+3. 登陆Github，点击`Setting`，找到`SSH and GPG keys`，再点击`New SSH key`,将`id_rsa.pub`的内容粘贴到`Key`文本框中，再设置个`Title`，最后点`Add Key`，这样就成功在远程仓库中添加了本地git账户的修改权限。  
+
+4. 用`$ git remote add origin git@github.com:michaelliao/example.git`命令，将本地git仓库与github上远程仓库关联起来，之后就可以向github上远程仓库推送修改内容了。  
+
+#### 推送内容至远程仓库  
+
+`git push <远程主机名> <本地分支名>:<远程分支名>`是将本地暂存区内容推送到远程仓库的标准命令，一般默认分支是master，所以命令是这样：`git push origin master:master`。当本地分支与远程分支名是一样的时候，可以省略远程分支名，简写成`git push origin master`。
