@@ -8,7 +8,7 @@ windows版的Git可以从[https://git-for-windows.github.io](https://git-for-win
 
 ## Git初始设置  
 
-#### 设置用户信息
+### 设置用户信息
 
 安装完成后需要设置用户名和邮箱地址，因为git是版本控制工具，可能是多人协作的，所以需要报家门。  
 
@@ -21,7 +21,7 @@ $ git config --global user.email "email@example.com"
 
 使用`git config`命令的`--global`参数表示这台电脑上所有git仓库都将使用这个设置。如果需要对不同仓库指定不同的设置，则需要使用另外的参数。  
 
-#### 创建版本库  
+### 创建版本库  
 
 版本库又名仓库，英文repository，它是一个文件目录，Git管理着这个目录里面的所有文件，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。
 
@@ -45,11 +45,11 @@ Initialized empty Git repository in .../newrepository/.git/
 
 在Git里，存放文件的地方有4个概念：工作区、暂存区、分支和远程仓库，Git的版本控制就是记录这4个地方的文件的变化，对这4个地方的文件进行备份与还原。  
 
-#### 工作区  
+### 工作区  
 
 工作区就是电脑中存放文件的文件夹，所有的文件的修改都是首先在这里进行的。  
 
-#### 版本库  
+### 版本库  
 
 工作区有一个隐藏目录`.git`，这个不算工作区，而是Git的版本库。版本库分两个部分，暂存区（stage）和分支。  
 
@@ -57,15 +57,15 @@ Initialized empty Git repository in .../newrepository/.git/
 
 注意，`*`可以是一个文件名，也可以是多个文件名，如果只是`*`，可以一次提交所有的工作区的修改。`commit` 命令中的双引号内是说明，对这次提交的修改进行备注。   
 
-#### 暂存区和分支
+### 暂存区和分支
 
 Git记录的是文件的变化，暂存区只会记录一次变化，而分支会记录所有变化，并对每次提交到分支的变化进行编号管理，当我们开发过程中遇到问题，想要退回到某次变化的时候，就可以通过对分支指针的操作来实现。  
 
-#### 远程仓库  
+### 远程仓库  
 
 Git是个分布式版本控制工具，它可以在不同的电脑上对同一个项目进行版本控制。我们可以将一个版本库提交到一个服务器上，这样就建立了远程仓库，在别的电脑上可以从这个服务器上clone这个远程仓库，不同电脑上的版本库内容都可以提交到这个远程仓库，也可以从这个远程仓库下载内容，这样就可以由多人在不同地方对一个项目同步进行管理。  
 
-#### 管理修改与版本控制   
+### 管理修改与版本控制   
 
 |需求|命令|  
 |:----|:-----|
@@ -83,7 +83,7 @@ Git是个分布式版本控制工具，它可以在不同的电脑上对同一�
 
 ## 远程仓库交互  
 
-####  连接远程仓库  
+###  连接远程仓库  
 
 这里假定远程仓库在Github上，首先在Github上注册一个账号，这个就不做介绍了。注册好账户后通过以下几个步骤将电脑上的git账号与github上的账户建立连系：  
 
@@ -96,8 +96,193 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 3. 登陆Github，点击`Setting`，找到`SSH and GPG keys`，再点击`New SSH key`,将`id_rsa.pub`的内容粘贴到`Key`文本框中，再设置个`Title`，最后点`Add Key`，这样就成功在远程仓库中添加了本地git账户的修改权限。  
 
-4. 用`$ git remote add origin git@github.com:michaelliao/example.git`命令，将本地git仓库与github上远程仓库关联起来，之后就可以向github上远程仓库推送修改内容了。  
+这样之后就可以通过一些命令与远程仓库进行交互了。  
 
-#### 推送内容至远程仓库  
+### git remote  
 
-`git push <远程主机名> <本地分支名>:<远程分支名>`是将本地暂存区内容推送到远程仓库的标准命令，一般默认分支是master，所以命令是这样：`git push origin master:master`。当本地分支与远程分支名是一样的时候，可以省略远程分支名，简写成`git push origin master`。
+为了便于管理，Git要求每个远程主机都必须指定一个主机名。  
+
+与远程仓库交互的第一步是添加远程主机，`git remote add` 命令用于添加远程主机。
+
+````
+git remote add <主机名> <网址>  
+````  
+
+````
+git remote add origin git@github.com:tangyubao/mountainlearn.git  
+````  
+`git@github.com:tangyubao/mountainlearn.git`是远程仓库的地址，上述命令的作用是向远程仓库添加一个主机名，一般默认是`origin`。  
+
+`git remote`命令用于管理主机名。
+
+不带选项的时候，`git remote`命令列出所有远程主机。  
+
+````
+git remote
+origin  
+````
+使用-v选项，可以参看远程主机的网址。
+
+````
+git remote -v
+origin  git@github.com:jquery/jquery.git (fetch)
+origin  git@github.com:jquery/jquery.git (push)  
+````   
+
+上面命令表示，当前只有一台远程主机，叫做origin，以及它的网址。
+
+克隆版本库的时候，所使用的远程主机自动被Git命名为origin。如果想用其他的主机名，需要用git clone命令的-o选项指定。
+````
+$ git clone -o jQuery git@github.com:jquery/jquery.git
+$ git remote  
+jQuery  
+````  
+
+上面命令表示，克隆的时候，指定远程主机叫做jQuery。
+
+`git remote show`命令加上主机名，可以查看该主机的详细信息。
+````
+git remote show <主机名>  
+````
+
+git remote rm命令用于删除远程主机。
+````
+git remote rm <主机名>  
+````  
+
+git remote rename命令用于远程主机的改名。
+````
+$ git remote rename <原主机名> <新主机名>  
+````  
+
+###  git clone  
+
+如果我们将远程仓库已有的项目拷贝到本地来，这时就要用到`git clone`命令。
+````
+$ git clone <版本库的网址>  
+````   
+
+比如，克隆jQuery的版本库。  
+
+````
+git clone git@github.com:jquery/jquery.git  
+````  
+
+该命令会在本地主机生成一个目录，与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为`git clone`命令的第二个参数。  
+
+````
+git clone <版本库的网址> <本地目录名>  
+````  
+
+git clone支持多种协议，有HTTP(s)、SSH、Git、本地文件协议等。  
+
+通常来说，Git协议下载速度最快，SSH协议用于需要用户认证的场合。  
+
+### git push  
+
+`git push <远程主机名> <本地分支名>:<远程分支名>`是将本地暂存区内容推送到远程仓库的标准命令，一般默认分支是master，所以命令是这样：`git push origin master:master`。  
+
+当本地分支与远程分支名是一样的时候，可以省略远程分支名，简写成`git push origin master`。  
+
+如果当前只有一个本地与远程仓库只有一个相连接的分支，则推送命令可以进一步简化为`git push`。  
+
+如果当前本地分支与多个主机存在连接关系，或第一次向远程仓库推送更新，则要使用`-u`选项制定一个默认主机，之后在不变更主机连接的情况下，则只用`git push`命令即可：  
+
+````
+git push -u origin master
+````  
+
+###  git fetch  
+
+一旦远程主机的版本库有了更新(Git术语叫做commit)，需要将这些更新取回本地，这时就要用到`git fetch`命令。  
+
+````
+git fetch <远程主机名>  
+````
+
+上面命令将某个远程主机的更新，全部取回本地。
+
+默认情况下，`git fetch`取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。
+````
+git fetch <远程主机名> <分支名>  
+````
+
+比如，取回origin主机的master分支。
+````
+git fetch origin master  
+````  
+
+所取回的更新，在本地主机上要用“远程主机名/分支名”的形式读取。比如origin主机的master，就要用origin/master读取。
+
+`git branch`命令的`-r`选项，可以用来查看远程分支，`-a`选项查看所有分支。
+````
+git branch -r
+origin/master
+
+git branch -a
+* master
+  remotes/origin/master  
+````  
+
+上面命令表示，本地主机的当前分支是master，远程分支是origin/master。
+
+取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支。  
+
+````
+git checkout -b newBrach origin/master  
+````  
+
+上面命令表示，在origin/master的基础上，创建一个新分支。
+
+此外，也可以使用git merge命令或者git rebase命令，在本地分支上合并远程分支。
+````
+git merge origin/master  
+````  
+
+或者：  
+````
+git rebase origin/master  
+````
+
+### git pull  
+
+`git pull <远程主机名> <远程分支名>:<本地分支名>`是取回远程仓库分支更新的标准命令，一般默认分支是master，所以命令是这样：`git pull origin master:dev`。  
+
+如果远程分支是与当前分支合并，则冒号后面的部分可以省略：
+
+````
+git pull origin dev
+````
+
+上面命令表示，取回origin/dev分支，再与当前分支合并。实质上，这等同于先做`git fetch`，再做`git merge`。
+
+````  
+git fetch origin  
+git merge origin/dev  
+````  
+
+在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系。比如，在`git clone`的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动“追踪”`origin/master`分支。
+
+Git也允许手动建立追踪关系。  
+
+````
+git branch --set-upstream master origin/dev
+````  
+
+上面命令指定master分支追踪origin/dev分支。
+
+如果当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。
+
+````
+git pull origin  
+````  
+
+上面命令表示，本地的当前分支自动与对应的origin主机“追踪分支”进行合并。
+
+如果当前分支只有一个追踪分支，连远程主机名都可以省略，简略为`git pull`，表示当前分支自动与唯一一个追踪分支进行合并。  
+
+***
+## 分支管理  
+
+### 冲突处理  
+有时当我们向远程仓库push更新的时候发现远程仓库有更新，推送失败，这里产生了冲突，就必须先用`git pull`将远程仓库的最新版本取到本地，
