@@ -49,7 +49,7 @@
 
 ### 常用快捷键  
 |英文|中文|快捷键|
-|:-|:-|:-|
+|:----|:-----|:----|
 |New Window|新建窗口|Ctrl+Shift+N|
 |New File|新建文件|Ctrl+N|
 |Open File|打开文件|Ctrl+O|
