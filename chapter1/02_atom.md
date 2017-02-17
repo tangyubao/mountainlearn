@@ -124,9 +124,9 @@ sublime上有个很实用的小功能，就是在编辑代码的时候，边上�
 #### linter  
 
 这个插件可以识别多门语言的错误，可以细分很多针对某种语言版本的，适合前端的主要有：
-* linter-jshint
-* linter-csslint  
-* linter-scss-lint  
-* linter-less  
-* linter-pylint  
-* linter-php  
+- linter-jshint
+- linter-csslint  
+- linter-scss-lint  
+- linter-less  
+- linter-pylint  
+- linter-php  

@@ -30,9 +30,9 @@
 
 只需要1行代码就可以实现标签的嵌套。
 
-* \>：子元素符号，表示嵌套的元素
-* +：同级标签符号
-* ^：可以使该符号前的标签提升一行
+- \>：子元素符号，表示嵌套的元素
+- +：同级标签符号
+- ^：可以使该符号前的标签提升一行
 
 ![Emmet实现HTML初始化演示](emmet_html3.gif)
 
@@ -56,10 +56,10 @@
 
 下面是所有的隐式标签名称：
 
-* li：用于ul和ol中
-* tr：用于table、tbody、thead和tfoot中
-* td：用于tr中
-* option：用于select和optgroup中
+- li：用于ul和ol中
+- tr：用于table、tbody、thead和tfoot中
+- td：用于tr中
+- option：用于select和optgroup中
 
 #### 6、 定义多个元素
 
@@ -103,9 +103,9 @@ margin: 5em;
 
 单位别名列表：
 
-* p 表示%  
-* e 表示 em
-* x 表示 ex  
+- p 表示%  
+- e 表示 em
+- x 表示 ex  
 
 #### 2、附加属性
 
@@ -172,10 +172,10 @@ transform: ;
 ````
 前缀缩写如下：
 
-* w 表示 -webkit-
-* m 表示 -moz-
-* s 表示 -ms-
-* o 表示 -o-  
+- w 表示 -webkit-
+- m 表示 -moz-
+- s 表示 -ms-
+- o 表示 -o-  
 
 #### 5、 渐变
 
