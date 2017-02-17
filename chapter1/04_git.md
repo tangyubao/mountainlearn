@@ -412,6 +412,8 @@ git tag -a v0.1 -m "第一个预览版本" cf645d9
 有些文件可能很重要，我们需要放在Git工作目录中，但是又不能提交到远程仓库，这就需要在git工作根目录创建一个`.gitignore`文件，文件里写上你要忽略的文件的文件名，形式如下：
 ````
 # Windows:
+/chapter2/
+!/chapter2/*.md
 Thumbs.db
 ehthumbs.db
 Desktop.ini
@@ -428,7 +430,11 @@ build
 db.ini
 deploy_key_rsa
 ````  
-`*`星号带扩展名意思是要忽略所有这个扩展名的文件。  
+`chapter2`是忽略这个chapter文件夹。  
+
+`*.so`是忽略所有扩展名为.so的文件。  
+
+`!/chapter2/*.md`是将文件夹chapter2下所有扩展名为.md的文件添加到版本管理中，不忽略。   
 
 有些时候，你想添加一个文件到Git，但发现添加不了，原因是这个文件被`.gitignore`忽略了，如果我们依然想添加这个文件，可以用带`-f`参数的`git add -f`命令来添加。  
 
