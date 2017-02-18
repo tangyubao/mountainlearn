@@ -47,7 +47,7 @@ $ git config --global user.email "email@example.com"
 
 使用`git config`命令的`--global`参数表示这台电脑上所有git仓库都将使用这个设置。如果需要对不同仓库指定不同的设置，则需要使用另外的参数。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### 创建版本库  
 
@@ -69,7 +69,7 @@ $git init
 Initialized empty Git repository in .../newrepository/.git/
 ````  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## 版本控制   
 
@@ -79,7 +79,7 @@ Initialized empty Git repository in .../newrepository/.git/
 
 工作区就是电脑中存放文件的文件夹，所有的文件的修改都是首先在这里进行的。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### 版本库  
 
@@ -89,7 +89,7 @@ Initialized empty Git repository in .../newrepository/.git/
 
 注意，`*`可以是一个文件名，也可以是多个文件名，如果只是`*`，可以一次提交所有的工作区的修改。`commit` 命令中的双引号内是说明，对这次提交的修改进行备注。   
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### 暂存区和分支
 
@@ -100,7 +100,7 @@ Git记录的是文件的变化，暂存区只会记录一次变化，而分支�
 
 Git是个分布式版本控制工具，它可以在不同的电脑上对同一个项目进行版本控制。我们可以将一个版本库提交到一个服务器上，这样就建立了远程仓库，在别的电脑上可以从这个服务器上clone这个远程仓库，不同电脑上的版本库内容都可以提交到这个远程仓库，也可以从这个远程仓库下载内容，这样就可以由多人在不同地方对一个项目同步进行管理。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### 管理修改与版本控制   
 
@@ -116,7 +116,7 @@ Git是个分布式版本控制工具，它可以在不同的电脑上对同一�
 |清空工作区|git checkout -- <span style="color:green;">*</span>|  
 |清空暂存区和工作区|git reset --hard HEAD|   
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## 远程仓库交互  
 
@@ -135,7 +135,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 这样之后就可以通过一些命令与远程仓库进行交互了。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### git remote  
 
@@ -194,7 +194,7 @@ git remote rename命令用于远程主机的改名。
 $ git remote rename <原主机名> <新主机名>  
 ````   
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ###  git clone  
 
@@ -219,7 +219,7 @@ git clone支持多种协议，有HTTP(s)、SSH、Git、本地文件协议等。
 
 通常来说，Git协议下载速度最快，SSH协议用于需要用户认证的场合。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### git push  
 
@@ -234,7 +234,7 @@ git clone支持多种协议，有HTTP(s)、SSH、Git、本地文件协议等。
 ````
 git push -u origin master
 ````    
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ###  git fetch  
 
@@ -288,7 +288,7 @@ git merge origin/master
 git rebase origin/master  
 ````  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### git pull  
 
@@ -327,7 +327,7 @@ git pull origin
 
 如果当前分支只有一个追踪分支，连远程主机名都可以省略，简略为`git pull`，表示当前分支自动与唯一一个追踪分支进行合并。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## 分支管理  
 
@@ -378,7 +378,7 @@ git branch -M oldbranch newbranch
 ````
 `-m`参数用来重命名分支，如果newbranch名字分支已经存在，则需要使用`-M`强制重命名。  
 
-[回到顶部](#Git)    
+[回到顶部](#git)    
 
 ### 保存分支合并记录  
 
@@ -391,7 +391,7 @@ git merge --no-ff -m "用no-ff参数合并分支" dev
 ````
 因为本次合并要创建一个新的commit，所以加上`-m`参数，把commit描述写进去。这样可以在用，在`dev`分支被删除后，以后可以`git log`查看到在哪里进行了合并。   
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ### 保存现场  
 
@@ -412,7 +412,7 @@ git stash pop stash@{0}
 ````  
 如果有多个现场保存了，我们可以使用`git stash list`命令查看所有现场，再通过参数`stash@{0}`的不同来选择恢复到制定现场。如果只有一个现场，则可以省略参数`stash@{0}`。
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## 冲突处理  
 
@@ -422,7 +422,7 @@ git stash pop stash@{0}
 
 如果是要向远程仓库推送更新的话，完成上述工作之后再用`git push`推送即可。  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## 标签管理  
 
@@ -454,7 +454,7 @@ git tag -a v0.1 -m "第一个预览版本" cf645d9
 
 - `git push origin :refs/tags/<tagname>`可以删除一个远程标签。
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ##  忽略特殊文件  
 
@@ -491,7 +491,7 @@ deploy_key_rsa
 
 `git check-ignore -v hello.html`  
 
-[回到顶部](#Git)   
+[回到顶部](#git)   
 
 ## git命令大全  
 待完成
