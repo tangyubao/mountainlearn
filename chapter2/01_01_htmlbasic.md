@@ -44,7 +44,7 @@
 - [十二、事件](#十二事件)  
 
 ## 一、前言  
-学习web前端开发基础技术需要掌握的最基础的三门技术：HTML、CSS、JavaScript语言。  
+学习web前端开发技术需要掌握的最基础的三门技术：HTML、CSS、JavaScript语言。  
 
 1. HTML是网页内容的载体。内容就是网页制作者放在页面上想要让用户浏览的信息，可以包含文字、图片、视频等。  
 
@@ -71,7 +71,7 @@
     </body>
 </html>  
 ````  
-这是一个基础的HTML格式：  
+这是一个基础的HTML格式。
 
 ### 1、<!DOCTYPE>  
 
@@ -81,8 +81,8 @@
 
 HTML标记标签通常被称为 HTML 标签 (HTML tag)，标签又称元素。  
 - 一个HTML页面由很多个标签组成，网页的所有内容都必须放在标签之间，不同的标签定义不同的格式或内容。  
-- HTML 标签是由**尖括号包围**的关键词，比如 <html>；  
-- HTML 标签通常是**成对出现的**，比如 <b> 和 </b>；  
+- HTML 标签是由**尖括号包围**的关键词，比如 `<html>`；  
+- HTML 标签通常是**成对出现的**，比如`<b>`和 `</b>`；  
 - 标签对中的第一个标签是**开始标签**，第二个标签是**结束标签**；    
 - 少数标签没有基础标签，非成对出现，如`<br/>`、`<hr/>`、`<img/>`等。  
 - 标签与标签之间是可以**嵌套**的，但先后顺序必须保持一致，如：`<div>`里嵌套`<p>`，那么`</p>`必须放在`</div>`的前面。
@@ -124,9 +124,9 @@ title 元素能够：
 `<meta>` 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。  
 
 meta 元素常被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。
-<meta> 标签始终位于 head 元素中。  
+`<meta>`标签始终位于head元素中。  
 
-元数据可用于浏览器（如何显示内容或重新加载页面）、搜索引擎（关键词）、或其他 web 服务。
+元数据可用于浏览器（如何显示内容或重新加载页面）、搜索引擎（关键词）、或其他web服务。
 
 最常用的是定义文档的字符集，通常我们使用`utf-8`字符集：  
 ````
@@ -186,7 +186,7 @@ p {color:blue}
 
 ## 四、块与内联标签  
 
-大多数 HTML 元素被定义为块级元素或内联元素。  
+大多数HTML元素被定义为块级元素或内联元素。  
 
 块级元素在浏览器显示时，通常会以新行来开始（和结束）。  
 
@@ -198,7 +198,7 @@ p {color:blue}
 
 ### 1、块与内联的区别  
 
-1. 块级元素会独占一行，其宽度自动填满其父元素宽度。行内元素不会独占一行，相邻的行内元素会排列在同一行里，知道一行排不下，才会换行，其宽度随元素的内容而变化。  
+1. 块级元素会独占一行，其宽度自动填满其父元素宽度。行内元素不会独占一行，相邻的行内元素会排列在同一行里，直到一行排不下，才会换行，其宽度随元素的内容而变化。  
 
 - 块级元素可以设置width,height属性，行内元素设置width,height无效**【注意：块级元素即使设置了宽度，仍然是独占一行的】** 。  
 
@@ -231,7 +231,7 @@ p {color:blue}
 
 通过CSS样式中的`display`可以将某个元素定义为块级元素、内联元素或行内块元素。  
 
-`display:block;`可将标签设置为块级元素；`display:inline;`可将标签设置为内联元素；`display:inline-block;`可将元素设置为行内块元素。  
+`display:block;`可将标签设置为块级元素，`display:inline;`可将标签设置为内联元素，`display:inline-block;`可将元素设置为行内块元素。  
 
 行内块元素是不会独占一行，但又可以设置宽和高属性的元素。  
 
@@ -246,7 +246,7 @@ p {color:blue}
 - 属性一般描述于开始标签；  
 - 属性总是以名称/值对的形式出现，比如：`name="value"`；  
 - 属性值应该始终被包括在引号内，双引号是最常用的，但使用单引号也可以，极少的属性值因为自身就有双引号，则必须使用单引号，如：`name='"ShotGun"Nelson'`；  
-- 和标签一样，属性怼大小写不敏感，丹建议使用小写。  
+- 和标签一样，属性对大小写不敏感，但建议使用小写。  
 
 ### 1、全局属性  
 
@@ -283,7 +283,7 @@ p {color:blue}
 |[height](http://www.w3school.com.cn/tags/att_img_height-width.asp)|设置块级元素高度。img中是设置图像高度。|  
 |[alt](http://www.w3school.com.cn/tags/att_img_alt.asp)|规定图像的替代文本。|  
 |[target](http://www.w3school.com.cn/tags/att_a_target.asp)|规定在何处打开链接文档。|  
-|[type](http://www.w3school.com.cn/tags/att_a_type.asp)|type 属性规定目标文档的 MIME 类型。只能在 href 属性存在时使用。|  
+|[type](http://www.w3school.com.cn/tags/att_a_type.asp)|type 属性规定目标文档或元素的类型。|  
 |[value](http://www.w3school.com.cn/tags/att_button_value.asp)|规定与元素关联的初始值。|    
 
 [回到顶部](#htmlbasic)  
@@ -293,6 +293,7 @@ p {color:blue}
 HTML 支持有序、无序和自定义列表。  
 
 ### 1、无序列表  
+
 无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。  
 
 无序列表使用`<ul>`标签：
@@ -310,21 +311,23 @@ HTML 支持有序、无序和自定义列表。
 
 ### 2、有序列表   
 
-有序列表也是一列项目，列表项目使用数字进行标记。 有序列表始于`<ol>`标签。每个列表项始于`<li>`标签。  
+有序列表也是一列项目，列表项目使用数字进行标记。有序列表始于`<ol>`标签，每个列表项始于`<li>`标签。  
 
-列表项项使用数字来标记：  
+列表项使用数字来标记：  
 ````
 <ol>
 <li>Coffee</li>
 <li>Milk</li>
 </ol>
 ````  
-浏览器中显示如下：
+浏览器中显示如下：  
 1. Coffee
 - Milk  
 
 ### 3、自定义列表  
-自定义列表不仅仅是一列项目，而是项目及其注释的组合。
+
+自定义列表不仅仅是一列项目，而是项目及其注释的组合。  
+
 自定义列表以 `<dl>` 标签开始。每个自定义列表项以 `<dt>` 开始。每个自定义列表项的定义以 `<dd>` 开始。  
 ````
 <dl>
@@ -347,6 +350,7 @@ Milk
 ## 七、表格   
 
 表格由`<table>`标签来定义。每个表格均有若干行（由`<tr>`标签定义），每行被分割为若干单元格（由`<td>`标签定义）。字母td指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。  
+
 一个典型的表格代码如下：  
 ````
 <table>
@@ -395,8 +399,8 @@ Milk
   这是表格的标题
   </caption>
   <colgroup>
-    <col span="2" style="background-color:red;"/>
-    <col style="background-colorgreen;">
+    <col span="2" style="font-size:20px;"/>
+    <col style="font-size:16px;">
   </colgroup>
   <thead>
     <tr>
@@ -432,8 +436,8 @@ Milk
   这是表格的标题
   </caption>
   <colgroup>
-    <col span="2" style="background-color:red;"/>
-    <col style="background-color:green;">
+    <col span="2" style="font-size:20px;"/>
+    <col style="font-size:16px;">
   </colgroup>
   <thead>
     <tr>
@@ -472,7 +476,7 @@ Milk
 `rowspan`可以设置单元格跨行，`colspan`可以设置单元格跨列：   
 
 ````
-<table border="1">
+<table>
 <caption>
  单元格跨两列:
 </caption>
@@ -505,7 +509,7 @@ Milk
 </table>
 ````  
 上述代码网页显示效果：  
-<table border="1">
+<table>
 <caption>
  单元格跨两列:
 </caption>
@@ -547,7 +551,7 @@ Milk
 
 ### 1、输入元素input  
 
-表单众多标签中最长被用到的是`<input/>`标签。根据`type`属性的不同，`<input/>`有很多不同的形态，实现不同的功能。`<input/>` 的`type`类型总共有23种，常用的有10种：  
+表单众多标签中最常被用到的是`<input/>`标签。根据`type`属性的不同，`<input/>`有很多不同的形态，实现不同的功能。`<input/>` 的`type`类型总共有23种，常用的有10种：  
 
 |type|说明|  
 |:----|:----|  
@@ -577,11 +581,6 @@ Milk
 我是一个文本框。
 </textarea>
 ````  
-网页显示效果：  
-
-<textarea rows="2" cols="30">
-我是一个文本框。
-</textarea>    
 
 [回到顶部](#htmlbasic)  
 
@@ -606,17 +605,6 @@ Milk
   </optgroup>
 </select>  
 ````  
-网页显示效果：  
-<select>
-  <optgroup label="第一组选项">
-    <option value="first">选项一</option>
-    <option value="second">选项二</option>
-  </optgroup>
-  <optgroup label="第二组选项">
-    <option value="third">选项3</option>
-    <option value="forth">选项4</option>
-  </optgroup>
-</select>    
 
 [回到顶部](#htmlbasic)  
 
@@ -655,15 +643,6 @@ Milk
  Date of birth: <input type="text">
 </fieldset>
 ````  
-页面显示效果：
-<form>
-  <fieldset>
-   <legend>Personalia:</legend>
-   Name: <input type="text"><br>
-   Email: <input type="text"><br>
-  </fieldset>
-  Date of birth: <input type="text">
-</form>    
 
 [回到顶部](#htmlbasic)  
 
@@ -730,6 +709,6 @@ HTML 使用标签 `<b>`("bold") 与 `<i>`("italic") 对输出的文本进行格�
 
 ## 十二、事件  
 
-HTML中事件可以理解为 **会出发浏览器中的行为的属性** ，通常是会出发JavaScript函数。  
+HTML中事件可以理解为**会触发浏览器中的行为的属性**，通常是会出发JavaScript函数。  
 
 事件属性不建议常用，我们完全可以用JavaScript脚本来代替它。  
